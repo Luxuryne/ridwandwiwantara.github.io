@@ -55,5 +55,26 @@
   <footer>
     <p>© 2025 Ridwan Dwi Wantara — Terima kasih sudah mengunjungi!</p>
   </footer>
+  
+  <script>
+    const sections = document.querySelectorAll('section');
+    const options = {
+      threshold: 0.1
+    };
+
+    const reveal = (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('reveal');
+        observer.unobserve(entry.target);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(reveal, options);
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+</script>
 </body>
 </html>
