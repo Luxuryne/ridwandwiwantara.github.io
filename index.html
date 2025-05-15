@@ -4,8 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ridwan Dwi Wantara</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <meta name="description" content="Website pribadi Ridwan Dwi Wantara, siswa SMKN 1 Sukatani jurusan RPL.">
+  <meta name="author" content="Ridwan Dwi Wantara">
+  <meta property="og:title" content="Ridwan Dwi Wantara - Personal Website">
+  <meta property="og:description" content="Profil, skill, dan portofolio Ridwan untuk dunia kerja.">
+  <meta property="og:url" content="https://ridwandwiwantara.github.io">
 </head>
 <body>
   <header>
@@ -48,33 +53,29 @@
 
   <section id="contact">
     <h2>Contact</h2>
-    <p>Email: ridwandwiwantara@email.com</p>
-    <p>GitHub: <a href="https://github.com/ridwandwiwantara" target="_blank">ridwandwiwantara</a></p>
+    <p><i class="fas fa-envelope"></i> Email: ridwandwiwantara@email.com</p>
+    <p><i class="fab fa-github"></i> GitHub: <a href="https://github.com/ridwandwiwantara" target="_blank">ridwandwiwantara</a></p>
   </section>
 
   <footer>
     <p>© 2025 Ridwan Dwi Wantara — Terima kasih sudah mengunjungi!</p>
   </footer>
-  
+
   <script>
     const sections = document.querySelectorAll('section');
-    const options = {
-      threshold: 0.1
-    };
+    const options = { threshold: 0.1 };
 
     const reveal = (entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('reveal');
-        observer.unobserve(entry.target);
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('reveal');
+          observer.unobserve(entry.target);
         }
       });
     };
 
     const observer = new IntersectionObserver(reveal, options);
-    sections.forEach(section => {
-      observer.observe(section);
-    });
-</script>
+    sections.forEach(section => observer.observe(section));
+  </script>
 </body>
 </html>
